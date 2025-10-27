@@ -1,0 +1,2 @@
+Tests: examples
+Depends: @, @builddeps@

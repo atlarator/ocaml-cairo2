@@ -1,0 +1,21 @@
+#!/bin/sh -e
+
+indir=${PWD}
+outdir=${AUTOPKGTEST_ARTIFACTS-/tmp/ocaml-cairo2-package-test}
+mkdir -p ${outdir}
+cd ${outdir}
+cp -r ${indir}/examples ${indir}/dune-project .
+
+echo "compile examples."
+dune build @examples
+
+echo "execute compiled examples."
+cd _build/default
+for d in examples; do
+    cd $d
+    for f in *.exe; do
+	echo "executing compiled example $d/$f."
+	./$f
+    done
+    cd ..
+done

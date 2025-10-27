@@ -1,0 +1,7 @@
+The Debian version of the source tree does not contain the directory
+"docs" as this directory contains a tutorial that most likely has a
+different license than the rest of the source. Since the license of
+the tutorial could not be clarified we do not redistribute the
+tutorial.
+
+ -- Ralf Treinen <treinen@debian.org>, Mon,  3 Jun 2019 17:51:40 +0200

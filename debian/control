@@ -1,15 +1,50 @@
-Source: template-repository
-Section: unknown
+Source: ocaml-cairo2
+Section: ocaml
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian OCaml Maintainers <debian-ocaml-maint@lists.debian.org>
+Uploaders: Ralf Treinen <treinen@debian.org>,
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-ocaml (>= 1.2),
+ ocaml,
+ ocaml-findlib,
+ ocaml-dune , libdune-ocaml-dev,
+ libgraphics-ocaml-dev,
+ libcairo2-dev
+# ocaml-findlib is needed so that dune finds the graphics library
+Build-Conflicts:
+ opam
+# dune behaves differently when opam is installed
+Standards-Version: 4.7.0
+Rules-Requires-Root: no
+Homepage: https://github.com/Chris00/ocaml-cairo
+Vcs-Git: https://salsa.debian.org/ocaml-team/ocaml-cairo2.git
+Vcs-Browser: https://salsa.debian.org/ocaml-team/ocaml-cairo2
 
-Package: template-repository
+Package: libcairo2-ocaml-dev
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: ${misc:Depends}, ${ocaml:Depends}, ${shlibs:Depends}
+Suggests: ocaml-findlib
+Provides: ${ocaml:Provides}
+Description: OCaml binding for Cairo (development files)
+ This is an OCaml binding to Cairo, a 2D graphics library with support for
+ multiple output devices. Currently supported output targets include
+ the X Window System, Quartz, Win32, image buffers, PostScript, PDF,
+ and SVG file output.
+ .
+ This package contains the development libraries you need to use cairo2 in
+ the development of OCaml programs.
+
+Package: libcairo2-ocaml
+Architecture: any
+Depends: ${misc:Depends}, ${ocaml:Depends}, ${shlibs:Depends}
+Provides: ${ocaml:Provides}
+Description: OCaml binding for Cairo (runtime library)
+ This is an OCaml binding to Cairo, a 2D graphics library with support for
+ multiple output devices. Currently supported output targets include
+ the X Window System, Quartz, Win32, image buffers, PostScript, PDF,
+ and SVG file output.
+ .
+ This package includes only the dynamic library needed for running dynamic
+ OCaml bytecode executables that have been compiled with the cairo2 OCaml
+ libraries.

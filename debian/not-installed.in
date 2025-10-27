@@ -1,0 +1,5 @@
+/usr/doc/cairo2*/CHANGES.md
+/usr/doc/cairo2*/LICENSE.md
+/usr/doc/cairo2*/README.md
+@OCamlStdlibDir@/cairo2-gtk/*
+@OCamlStdlibDir@/cairo2-pango/*

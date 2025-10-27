@@ -1,5 +1,109 @@
-template-repository (1.0-1) unstable; urgency=medium
+ocaml-cairo2 (0.6.5-2deepin1) unstable; urgency=medium
 
-  * Initial release
+  [ Stéphane Glondu ]
+  * Team upload
+  * Set minimum version of ocaml-dune in Build-Depends
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ VZstless ]
+  * Remove version limit for ocaml-dune
+
+ -- VZstless <vzstless@qq.com>  Tue, 07 Jan 2025 07:27:23 +0100
+
+ocaml-cairo2 (0.6.5-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+  * Bump Standards-Version to 4.7.0
+
+ -- Stéphane Glondu <glondu@debian.org>  Mon, 30 Dec 2024 17:27:09 +0100
+
+ocaml-cairo2 (0.6.4+dfsg-4) unstable; urgency=medium
+
+  * Team upload
+  * Remove unnecessary patch
+  * Add support for a different OCaml stdlib dir
+
+ -- Stéphane Glondu <glondu@debian.org>  Sat, 03 Aug 2024 07:09:21 +0200
+
+ocaml-cairo2 (0.6.4+dfsg-2) unstable; urgency=medium
+
+  * Team upload
+  * Use ocaml_dune DH buildsystem (Closes: #1042103)
+
+ -- Stéphane Glondu <glondu@debian.org>  Thu, 27 Jul 2023 05:22:06 +0200
+
+ocaml-cairo2 (0.6.4+dfsg-1) unstable; urgency=medium
+
+  [ Stéphane Glondu ]
+  * Team upload
+  * New upstream release
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Repository-Browse.
+  * Update standards version to 4.6.1, no changes needed.
+
+ -- Stéphane Glondu <glondu@debian.org>  Mon, 23 Jan 2023 11:18:22 +0100
+
+ocaml-cairo2 (0.6.2+dfsg-1) unstable; urgency=medium
+
+  * Team upload.
+  * New minor upstream release (which fixes a memory leak)
+    - Drop patch 0002-Fix-multiple-definitions-of-variables.patch, merged
+      upstream
+    - Drop patch 0003-Fix-FTBFS-with-OCaml-4.11.1.patch, fixed upstream
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Mon, 01 Feb 2021 20:46:56 +0100
+
+ocaml-cairo2 (0.6.1+dfsg-6) unstable; urgency=medium
+
+  * Fix FTBFS with OCaml 4.11.1
+  * Fix Vcs-Browser
+
+ -- Stéphane Glondu <glondu@debian.org>  Tue, 13 Oct 2020 12:30:03 +0200
+
+ocaml-cairo2 (0.6.1+dfsg-5) unstable; urgency=medium
+
+  * Team upload
+  * Fix multiple definitions of variables (Closes: #968427)
+
+ -- Stéphane Glondu <glondu@debian.org>  Sat, 15 Aug 2020 09:18:21 +0200
+
+ocaml-cairo2 (0.6.1+dfsg-4) unstable; urgency=medium
+
+  * Team upload
+  * Include ocamlvars.mk to prevent FTBFS in dh_dwz
+  * Bump debhelper compat level to 13
+  * Add Rules-Requires-Root: no
+
+ -- Stéphane Glondu <glondu@debian.org>  Fri, 14 Aug 2020 11:01:38 +0200
+
+ocaml-cairo2 (0.6.1+dfsg-3) unstable; urgency=medium
+
+  * gtksourceview2 removal from buster:
+    - stop building binary packages libcairo2-gtk-ocaml{-dev} and
+      libcairo2-pango-ocaml{-dev}.
+    - remove corresponding debian/*.install files
+    - register -gtk and -pango files in debian/not-installed
+    - drop build-dependency liblablgtk2-ocaml-dev
+    - drop build-conflict with liblablgtk3-ocaml-dev
+    - drop -gtk and -pango from as-installed test
+  * Update build-dependency dune to ocaml-dune
+  * Standards-Version 4.5.0 (no change)
+  * Add docs/ directory to the import filter
+
+ -- Ralf Treinen <treinen@debian.org>  Tue, 18 Feb 2020 08:49:16 +0100
+
+ocaml-cairo2 (0.6.1+dfsg-2) unstable; urgency=medium
+
+  * Standards-Version 4.4.0 (no change)
+  * Package test:
+    - add dependency on the packages build-dependencies
+    - be more verbose when executing compiled examples
+
+ -- Ralf Treinen <treinen@debian.org>  Mon, 12 Aug 2019 23:06:47 +0200
+
+ocaml-cairo2 (0.6.1+dfsg-1) unstable; urgency=medium
+
+  * Initial packaging (closes: #929313)
+
+ -- Ralf Treinen <treinen@debian.org>  Thu, 06 Jun 2019 09:23:06 +0200
